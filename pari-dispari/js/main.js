@@ -22,11 +22,11 @@ btnPlay.addEventListener("click",
         var userNumber = parseInt(document.getElementById("user_number").value);
         //raccolgo la scelta dell'utente tra pari e dispari
         var userChoice = document.getElementById("even_odd").value;
-
+        //genero il numero per il computer
         var cpuScore = randomNumber(1, 5);
-
+        //sommo i due numeri
         var sumToCheck = cpuScore + userNumber;
-
+        //verifico le condizioni di vittoria o di sconfitta e stampo un alert
         if(userChoice == "even" && isEven(sumToCheck)) {
             alert("Hai vinto! Il risultato è " + sumToCheck);
         } else if(userChoice == "odd" && !isEven(sumToCheck)) {
