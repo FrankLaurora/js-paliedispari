@@ -20,19 +20,24 @@ btnPlay.addEventListener("click",
     function() {
         //raccolgo l'input dell'utente e lo converto in numero
         var userNumber = parseInt(document.getElementById("user_number").value);
-        //raccolgo la scelta dell'utente tra pari e dispari
-        var userChoice = document.getElementById("even_odd").value;
-        //genero il numero per il computer
-        var cpuScore = randomNumber(1, 5);
-        //sommo i due numeri
-        var sumToCheck = cpuScore + userNumber;
-        //verifico le condizioni di vittoria o di sconfitta e stampo un alert
-        if(userChoice == "even" && isEven(sumToCheck)) {
-            alert("Hai vinto! Il risultato è " + sumToCheck);
-        } else if(userChoice == "odd" && !isEven(sumToCheck)) {
-            alert("Hai vinto! Il risultato è " + sumToCheck);
+        //verifico che il numero inserito sia effettivamente compreso tra 1 e 5
+        if (userNumber < 1 || userNumber > 5) {
+            alert("Attenzione! Devi inserire un numero da 1 a 5!")
         } else {
-            alert("Hai perso. Il risultato è " + sumToCheck)
+            //raccolgo la scelta dell'utente tra pari e dispari
+            var userChoice = document.getElementById("even_odd").value;
+            //genero il numero per il computer
+            var cpuScore = randomNumber(1, 5);
+            //sommo i due numeri
+            var sumToCheck = cpuScore + userNumber;
+            //verifico le condizioni di vittoria o di sconfitta e stampo un alert
+            if(userChoice == "even" && isEven(sumToCheck)) {
+                alert("Hai vinto! Il risultato è " + sumToCheck);
+            } else if(userChoice == "odd" && !isEven(sumToCheck)) {
+                alert("Hai vinto! Il risultato è " + sumToCheck);
+            } else {
+                alert("Hai perso. Il risultato è " + sumToCheck)
+            }
         }
     }
 )
