@@ -19,6 +19,12 @@ btnCheck.addEventListener("click",
     function() {
         //raccolgo la parola inserita dall'utente e la converto in minuscolo
         var userWord = (document.getElementById("user_word").value).toLowerCase();
+        //controllo che l'input dell'utente non contenga numeri
+        for(var i = 0; i <= 9; i++) {
+            if(userWord.includes(i)) {
+                return alert("Inserisci solo lettere!")
+            }
+        }
         //eseguo il controllo e genero un alert
         if(isPalindrome(userWord)) {
             alert(userWord + " è un palindromo.")
@@ -27,3 +33,9 @@ btnCheck.addEventListener("click",
         }
     }
 );
+
+//soluzione col ciclo for
+//var reverseWord = "";
+// for(var i = userWord.length - 1, i >= 0; i--) {
+//     reverseWord += userWord[i];
+// }
